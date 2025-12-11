@@ -1,6 +1,9 @@
 const fs = require('fs'); // 1. ต้อง import fs เพื่อใช้จัดการไฟล์
 const path = require('path');
 
+// Allow Thai and Latin letters and spaces only (no digits or special characters)
+const nameRegex = /^[A-Za-z\u0E00-\u0E7F\s]+$/;
+
 exports.commission_calculate = (req, res) => {
     // 2. รับ name เข้ามาด้วย
     const { name, stocks, locks, barrels } = req.body;
@@ -14,6 +17,14 @@ exports.commission_calculate = (req, res) => {
             });
         }
 
+        // ตรวจสอบชื่อ: ห้ามเว้นว่าง, และต้องประกอบด้วยตัวอักษรไทยหรืออังกฤษ (ไม่อนุญาตตัวเลข/อักษรพิเศษ)
+        if (!nameRegex.test(name) || name.trim().length === 0) {
+            return res.status(400).json({
+                success: false,
+                message: "ชื่อพนักงานต้องเป็นตัวอักษรภาษาไทยหรืออังกฤษเท่านั้น (ห้ามมีตัวเลขหรืออักษรพิเศษ)"
+            });
+        }
+
         // แปลงเป็นตัวเลข
         const locksNum = Number(locks);
         const stocksNum = Number(stocks);
@@ -24,6 +35,13 @@ exports.commission_calculate = (req, res) => {
             return res.status(400).json({
                 success: false,
                 message: "ข้อมูล locks, stocks, barrels ต้องเป็นตัวเลขเท่านั้น"
+            });
+        }
+
+        if (isInteger(locksNum) === false || isInteger(stocksNum) === false || isInteger(barrelsNum) === false) {
+            return res.status(400).json({
+                success: false,
+                message: "ข้อมูล locks, stocks, barrels ต้องเป็นจำนวนเต็มเท่านั้น"
             });
         }
 
@@ -90,7 +108,7 @@ exports.commission_calculate = (req, res) => {
                 commission: commission.toFixed(2)
             }
         });
-        
+
 
     } catch (error) {
         console.error("Error calculating commission:", error);

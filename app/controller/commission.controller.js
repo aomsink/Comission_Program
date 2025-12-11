@@ -3,6 +3,7 @@ const path = require('path');
 
 // Allow Thai and Latin letters and spaces only (no digits or special characters)
 const nameRegex = /^[A-Za-z\u0E00-\u0E7F\s]+$/;
+const isInteger = (value) => Number.isInteger(value);
 
 exports.commission_calculate = (req, res) => {
     // 2. รับ name เข้ามาด้วย

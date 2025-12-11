@@ -1,0 +1,512 @@
+[
+  {
+    "id": 1764777162172,
+    "name": "Elentia",
+    "locks": 70,
+    "stocks": 80,
+    "barrels": 90,
+    "sales": 7800,
+    "commission": 1420,
+    "created_at": "2025-12-03T15:52:42.172Z"
+  },
+  {
+    "id": 1764777168831,
+    "name": "0",
+    "locks": 70,
+    "stocks": 80,
+    "barrels": 90,
+    "sales": 7800,
+    "commission": 1420,
+    "created_at": "2025-12-03T15:52:48.831Z"
+  },
+  {
+    "id": 1764777186687,
+    "name": "Elentia",
+    "locks": 70,
+    "stocks": 80,
+    "barrels": 90,
+    "sales": 7800,
+    "commission": 1420,
+    "created_at": "2025-12-03T15:53:06.687Z"
+  },
+  {
+    "id": 1764831768285,
+    "name": "Elentia",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:02:48.285Z"
+  },
+  {
+    "id": 1764831799092,
+    "name": "เอกิรนทร์ พรหมบุตร",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:03:19.092Z"
+  },
+  {
+    "id": 1764831970589,
+    "name": "เอกิรนทร์ พรหมบุตร",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:06:10.589Z"
+  },
+  {
+    "id": 1764832052159,
+    "name": "-",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:32.159Z"
+  },
+  {
+    "id": 1764832059103,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:39.103Z"
+  },
+  {
+    "id": 1764832060967,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:40.967Z"
+  },
+  {
+    "id": 1764832061626,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:41.626Z"
+  },
+  {
+    "id": 1764832062013,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:42.013Z"
+  },
+  {
+    "id": 1764832062384,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:42.384Z"
+  },
+  {
+    "id": 1764832062778,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:42.778Z"
+  },
+  {
+    "id": 1764832063174,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:43.174Z"
+  },
+  {
+    "id": 1764832063552,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:43.552Z"
+  },
+  {
+    "id": 1764832063930,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:43.930Z"
+  },
+  {
+    "id": 1764832064303,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:44.303Z"
+  },
+  {
+    "id": 1764832066411,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:46.411Z"
+  },
+  {
+    "id": 1764832070145,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:50.145Z"
+  },
+  {
+    "id": 1764832070641,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:50.641Z"
+  },
+  {
+    "id": 1764832070995,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:50.995Z"
+  },
+  {
+    "id": 1764832071358,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:51.358Z"
+  },
+  {
+    "id": 1764832071720,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:51.720Z"
+  },
+  {
+    "id": 1764832072076,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:52.076Z"
+  },
+  {
+    "id": 1764832072460,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:52.460Z"
+  },
+  {
+    "id": 1764832072798,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:52.798Z"
+  },
+  {
+    "id": 1764832073137,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:53.137Z"
+  },
+  {
+    "id": 1764832073475,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:53.475Z"
+  },
+  {
+    "id": 1764832073813,
+    "name": "W",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:07:53.813Z"
+  },
+  {
+    "id": 1764832083500,
+    "name": "Elentia",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 72,
+    "sales": 2295,
+    "commission": 319,
+    "created_at": "2025-12-04T07:08:03.500Z"
+  },
+  {
+    "id": 1764836979622,
+    "name": "Elentia",
+    "locks": 1,
+    "stocks": 15,
+    "barrels": 45,
+    "sales": 1620,
+    "commission": 193,
+    "created_at": "2025-12-04T08:29:39.622Z"
+  },
+  {
+    "id": 1764939585872,
+    "name": "ิอิอิ",
+    "locks": 25,
+    "stocks": 30,
+    "barrels": 72,
+    "sales": 3825,
+    "commission": 625,
+    "created_at": "2025-12-05T12:59:45.872Z"
+  },
+  {
+    "id": 1764939717259,
+    "name": "เอเลนเทีย",
+    "locks": 35,
+    "stocks": 45,
+    "barrels": 14,
+    "sales": 3275,
+    "commission": 515,
+    "created_at": "2025-12-05T13:01:57.259Z"
+  },
+  {
+    "id": 1764939740749,
+    "name": "เอเลนเทีย",
+    "locks": 70,
+    "stocks": 80,
+    "barrels": 90,
+    "sales": 7800,
+    "commission": 1420,
+    "created_at": "2025-12-05T13:02:20.749Z"
+  },
+  {
+    "id": 1765256516590,
+    "name": "Kuay",
+    "locks": 50,
+    "stocks": 60,
+    "barrels": 40,
+    "sales": 5050,
+    "commission": 870,
+    "created_at": "2025-12-09T05:01:56.590Z"
+  },
+  {
+    "id": 1765256615349,
+    "name": "Kuay",
+    "locks": 50,
+    "stocks": 60,
+    "barrels": 40,
+    "sales": 5050,
+    "commission": 870,
+    "created_at": "2025-12-09T05:03:35.350Z"
+  },
+  {
+    "id": 1765256654289,
+    "name": "Kuay",
+    "locks": 50,
+    "stocks": 60,
+    "barrels": 40,
+    "sales": 5050,
+    "commission": 870,
+    "created_at": "2025-12-09T05:04:14.289Z"
+  },
+  {
+    "id": 1765256795603,
+    "name": "Juay",
+    "locks": 30,
+    "stocks": 10,
+    "barrels": 40,
+    "sales": 2650,
+    "commission": 390,
+    "created_at": "2025-12-09T05:06:35.604Z"
+  },
+  {
+    "id": 1765256869639,
+    "name": "Elentia",
+    "locks": 40,
+    "stocks": 50,
+    "barrels": 60,
+    "sales": 4800,
+    "commission": 820,
+    "created_at": "2025-12-09T05:07:49.639Z"
+  },
+  {
+    "id": 1765257835529,
+    "name": "Kuay",
+    "locks": 40,
+    "stocks": 50,
+    "barrels": 70,
+    "sales": 5050,
+    "commission": 870,
+    "created_at": "2025-12-09T05:23:55.529Z"
+  },
+  {
+    "id": 1765379538149,
+    "name": "12",
+    "locks": 43,
+    "stocks": 55,
+    "barrels": 66,
+    "sales": 5235,
+    "commission": 907,
+    "created_at": "2025-12-10T15:12:18.149Z"
+  },
+  {
+    "id": 1765381282050,
+    "name": "12",
+    "locks": 34,
+    "stocks": 56,
+    "barrels": 11,
+    "sales": 3485,
+    "commission": 557,
+    "created_at": "2025-12-10T15:41:22.050Z"
+  },
+  {
+    "id": 1765381513217,
+    "name": "W",
+    "locks": 70,
+    "stocks": 80,
+    "barrels": 90,
+    "sales": 7800,
+    "commission": 1420,
+    "created_at": "2025-12-10T15:45:13.217Z"
+  },
+  {
+    "id": 1765381692791,
+    "name": "W",
+    "locks": 70,
+    "stocks": 80,
+    "barrels": 90,
+    "sales": 7800,
+    "commission": 1420,
+    "created_at": "2025-12-10T15:48:12.791Z"
+  },
+  {
+    "id": 1765381789817,
+    "name": "W",
+    "locks": 12,
+    "stocks": 44,
+    "barrels": 2,
+    "sales": 1910,
+    "commission": 242,
+    "created_at": "2025-12-10T15:49:49.817Z"
+  },
+  {
+    "id": 1765382125988,
+    "name": "Test",
+    "locks": 12,
+    "stocks": 44,
+    "barrels": 2,
+    "sales": 1910,
+    "commission": 242,
+    "created_at": "2025-12-10T15:55:25.988Z"
+  },
+  {
+    "id": 1765382174369,
+    "name": "เอกรินทร์",
+    "locks": 22,
+    "stocks": 65,
+    "barrels": 55,
+    "sales": 4315,
+    "commission": 723,
+    "created_at": "2025-12-10T15:56:14.369Z"
+  },
+  {
+    "id": 1765382431974,
+    "name": "Elentia_the_stupid",
+    "locks": 41,
+    "stocks": 44,
+    "barrels": 20,
+    "sales": 3665,
+    "commission": 593,
+    "created_at": "2025-12-10T16:00:31.974Z"
+  },
+  {
+    "id": 1765382533479,
+    "name": "asdad",
+    "locks": 12,
+    "stocks": 12,
+    "barrels": 11,
+    "sales": 1175,
+    "commission": 126.25,
+    "created_at": "2025-12-10T16:02:13.479Z"
+  },
+  {
+    "id": 1765382572379,
+    "name": "qe",
+    "locks": 12,
+    "stocks": 1,
+    "barrels": 1,
+    "sales": 595,
+    "commission": 59.5,
+    "created_at": "2025-12-10T16:02:52.379Z"
+  },
+  {
+    "id": 1765382643832,
+    "name": "E",
+    "locks": 44,
+    "stocks": 21,
+    "barrels": 11,
+    "sales": 2885,
+    "commission": 437,
+    "created_at": "2025-12-10T16:04:03.832Z"
+  }
+]

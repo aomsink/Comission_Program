@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commission Calculator</title>
+    <script src="https://kit.fontawesome.com/c3b4a912fa.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --btn-blue: #5c7cfa;
+            --btn-red: #ff6b6b;
+            --text-color: #333;
+            --label-color: #666;
+            --border-radius: 50px; /* ความโค้งของปุ่มและ Input */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            background: var(--primary-gradient);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 950px; /* ขยายให้กว้างขึ้นเพื่อวาง 2 ฝั่ง */
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #333;
+            position: absolute;
+            left: 0;
+            transition: transform 0.2s;
+        }
+        .back-btn:hover { transform: translateX(-3px); }
+
+        h1 {
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Main Content Layout (2 Columns) */
+        .content-wrapper {
+            display: flex;
+            gap: 60px;
+            margin-bottom: 30px;
+        }
+
+        .col-left, .col-right {
+            flex: 1;
+        }
+
+        /* Input Styling */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--label-color);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 25px;
+            border-radius: var(--border-radius); /* ทรงแคปซูล */
+            border: 1px solid #e0e0e0;
+            font-family: 'Kanit', sans-serif;
+            font-size: 14px;
+            color: #333;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #764ba2;
+            box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+        }
+
+        input::placeholder {
+            color: #ccc;
+            font-weight: 300;
+        }
+
+        /* Result Section */
+        .result-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+            color: var(--label-color);
+        }
+        
+        .result-item span:last-child {
+            font-weight: 500;
+            color: #333;
+        }
+
+        /* Footer Buttons */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .btn {
+            border: none;
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-family: 'Kanit', sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+            color: white;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+
+        .btn:active { transform: scale(0.98); }
+        .btn:hover { opacity: 0.9; }
+
+        .btn-history {
+            background-color: var(--btn-blue);
+            box-shadow: 0 4px 15px rgba(92, 124, 250, 0.3);
+            min-width: 300px;
+        }
+
+        .right-buttons {
+            display: flex;
+            gap: 11px;
+        }
+
+        .btn-clear {
+            background-color: var(--btn-red);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            min-width: 150px;
+        }
+
+        .btn-calc {
+            background: var(--primary-gradient);
+            box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+            min-width: 250px;
+        }
+
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+            cursor: wait;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .footer {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .btn, .right-buttons {
+                width: 100%;
+            }
+            .right-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="header">
+            <button class="back-btn" onclick="window.location.href='/index.html'">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <h1>💰 Commission Calculator</h1>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="col-left">
+                <form id="commissionForm">
+                    <div class="form-group">
+                        <label>ชื่อพนักงาน</label>
+                        <input type="text" id="name" placeholder="เช่น เอกรินทร์ หรือ Ekarin" required autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label>locks</label>
+                        <input type="number" id="locks" placeholder="ใส่ได้สูงสุด 70 และไม่ต่ำกว่า 1" min="1" max="70" required>
+                    </div>
+                    <div class="form-group">
+                        <label>stocks</label>
+                        <input type="number" id="stocks" placeholder="ใส่ได้สูงสุด 80 และไม่ต่ำกว่า 1" min="1" max="80" required>
+                    </div>
+                    <div class="form-group">
+                        <label>barrels</label>
+                        <input type="number" id="barrels" placeholder="ใส่ได้สูงสุด 90 และไม่ต่ำกว่า 1" min="1" max="90" required>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-right">
+                <div class="result-header">
+                    <i class="fa-solid fa-chart-simple" style="color: #4cd137;"></i>
+                    ผลการคำนวณ
+                </div>
+                <div class="result-list">
+                <div class="result-item">
+                        <span>ชื่อพนักงาน</span>
+                        <span id="resultName">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span>locks</span>
+                        <span id="resultLocks">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span>stocks</span>
+                        <span id="resultStocks">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span>barrels</span>
+                        <span id="resultBarrels">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span>ยอดขาย</span>
+                        <span id="resultSales">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span>คอมมิชชั่น</span>
+                        <span id="resultCommission">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <button class="btn btn-history" onclick="window.location.href='history.html'">
+                ประวัติการคำนวณ
+            </button>
+            <div class="right-buttons">
+                <button type="button" id="clearStorage" class="btn btn-clear">เคลียร์ข้อมูล</button>
+                <button type="submit" form="commissionForm" class="btn btn-calc">คำนวณค่าคอมมิชชั่น</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('commissionForm');
+
+        // 1. ฟังก์ชันโหลดข้อมูลที่เคยกรอกค้างไว้
+        function loadFromStorage() {
+            const data = JSON.parse(localStorage.getItem('lastInput'));
+            if (data) {
+                document.getElementById('resultName').innerText = data.name || '-';
+                document.getElementById('name').value = data.name || '';
+                document.getElementById('locks').value = data.locks || '';
+                document.getElementById('stocks').value = data.stocks || '';
+                document.getElementById('barrels').value = data.barrels || '';
+                
+                if (data.result) {
+                    updateUI(data.result);
+                }
+            }
+        }
+
+        // 2. ฟังก์ชันอัปเดตหน้าจอ
+        function updateUI(data) {
+            document.getElementById('resultName').innerText = data.name;
+            document.getElementById('resultLocks').innerText = data.locks;
+            document.getElementById('resultStocks').innerText = data.stocks;
+            document.getElementById('resultBarrels').innerText = data.barrels;
+            // จัดรูปแบบตัวเลขให้สวยงาม (มี comma)
+            document.getElementById('resultSales').innerText = `$${Number(data.sales).toLocaleString(undefined, {minimumFractionDigits: 2})}`;
+            document.getElementById('resultCommission').innerText = `$${Number(data.commission).toLocaleString(undefined, {minimumFractionDigits: 2})}`;
+        }
+
+        // 3. ปุ่มเคลียร์ข้อมูล
+        document.getElementById('clearStorage').addEventListener('click', () => {
+            if(confirm('คุณต้องการล้างข้อมูลทั้งหมดใช่หรือไม่?')) {
+                localStorage.removeItem('lastInput');
+                form.reset();
+                // รีเซ็ตผลลัพธ์เป็น -
+                [ 'resultName','resultLocks', 'resultStocks', 'resultBarrels', 'resultSales', 'resultCommission'].forEach(id => {
+                    document.getElementById(id).innerText = '-';
+                });
+            }
+        });
+
+        // 4. เมื่อกดปุ่ม Submit (ส่งไปคำนวณที่ Server)
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = document.querySelector('.btn-calc');
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = 'กำลังคำนวณ...';
+            submitBtn.classList.add('loading');
+
+            const payload = {
+                name: document.getElementById('name').value.trim(),
+                locks: parseInt(document.getElementById('locks').value),
+                stocks: parseInt(document.getElementById('stocks').value),
+                barrels: parseInt(document.getElementById('barrels').value)
+            };
+
+            try {
+                // --- เชื่อมต่อ API ---
+                const response = await fetch('http://localhost:3000/api/commissions', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const resJson = await response.json();
+
+                if (resJson.success) {
+                    const serverData = resJson.data;
+                    updateUI(serverData);
+
+                    // บันทึกสถานะล่าสุดลง LocalStorage
+                    localStorage.setItem('lastInput', JSON.stringify({
+                        ...payload,
+                        result: serverData
+                    }));
+
+                } else {
+                    alert('ข้อผิดพลาด: ' + resJson.message);
+                }
+
+            } catch (err) {
+                console.error(err);
+                alert('ไม่สามารถเชื่อมต่อกับ Server ได้');
+            } finally {
+                submitBtn.innerText = originalText;
+                submitBtn.classList.remove('loading');
+            }
+        });
+
+        // เรียกใช้งานตอนเปิดหน้าเว็บ
+        loadFromStorage();
+    </script>
+</body>
+</html>
